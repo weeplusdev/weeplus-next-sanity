@@ -1,13 +1,13 @@
 import type { NextAuthConfig } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { PrismaClient } from "@prisma/client";
+import PrismaClient from "@prisma/client";
 import Google from "@auth/core/providers/google";
 import LineProvider from "@auth/core/providers/line";
 import Credentials from "@auth/core/providers/credentials";
 import * as bcrypt from "bcryptjs";
 
 // @ts-ignore
-const prisma = new PrismaClientType();
+const prisma = new PrismaClient();
 
 export const authConfig = {
   adapter: PrismaAdapter(prisma),
